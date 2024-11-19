@@ -1,0 +1,15 @@
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\bin\Debug\net8.0\DFind.exe
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\bin\Debug\net8.0\DFind.deps.json
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\bin\Debug\net8.0\DFind.runtimeconfig.json
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\bin\Debug\net8.0\DFind.dll
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\bin\Debug\net8.0\DFind.pdb
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\obj\Debug\net8.0\DFind.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\obj\Debug\net8.0\DFind.AssemblyInfoInputs.cache
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\obj\Debug\net8.0\DFind.AssemblyInfo.cs
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\obj\Debug\net8.0\DFind.csproj.CoreCompileInputs.cache
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\obj\Debug\net8.0\DFind.sourcelink.json
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\obj\Debug\net8.0\DFind.dll
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\obj\Debug\net8.0\refint\DFind.dll
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\obj\Debug\net8.0\DFind.pdb
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\obj\Debug\net8.0\DFind.genruntimeconfig.cache
+E:\Learning\extra_dotnet\Projects\DFInd\DFind\obj\Debug\net8.0\ref\DFind.dll
