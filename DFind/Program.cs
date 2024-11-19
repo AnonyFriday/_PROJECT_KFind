@@ -36,7 +36,89 @@ public class Program
             return;
         }
 
+        // Get multiple Options from the console
         var findOptions = BuildOptions(args);
+
+        // If in help mode
+        if (findOptions.IsHelpMode)
+        {
+            Console.WriteLine(@"
+Searches for a text string in a file or files.
+
+FIND [/V] [/C] [/N] [/I] [/OFF[LINE]] ""string"" [[drive:][path]filename[ ...]]
+
+  /V         Displays all lines NOT containing the specified string.
+  /C         Displays only the count of lines containing the string.
+  /N         Displays line numbers with the displayed lines.
+  /I         Ignores the case of characters when searching for the string.
+  /OFF[LINE] Do not skip files with offline attribute set.
+  ""string""   Specifies the text string to find.
+  [drive:][path]filename
+             Specifies a file or files to search.
+
+If a path is not specified, FIND searches the text typed at the prompt
+or piped from another command.
+");
+            return;
+        }
+
+        var sources = LineSourceFactory.CreateInstance(findOptions.Path, findOptions.IsSkipOfflineFiles);
+
+        foreach (var source in sources)
+        {
+            ProcessSource(source, findOptions);
+        }
+    }
+
+    /// <summary>
+    /// For each line, print out and advance on next line
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="findOptions"></param>
+    private static void ProcessSource(ILineSource source, FindOptions findOptions)
+    {
+        // Appply Decorator Design Pattern for source filter
+        var stringCaseComparision = findOptions.IsCaseSensitive
+            ? StringComparison.CurrentCulture
+            : StringComparison.CurrentCultureIgnoreCase;
+
+        source = new FilteredLineSource(source, line => !findOptions.IsFindDontContain
+            ? line.Text.Contains(findOptions.StringToFind, stringCaseComparision)
+            : !line.Text.Contains(findOptions.StringToFind));
+
+        Console.WriteLine($"\n----------- {source.Name.ToUpper()}\n");
+
+        try
+        {
+            // Open Source
+            source.Open();
+
+            // Read each line
+            var line = source.ReadLine();
+
+            while (line != null)
+            {
+                Print(line, findOptions.IsShowLineNumber);
+                line = source.ReadLine();
+            }
+        }
+        finally
+        {
+            // Close Source
+            source.Close();
+        }
+    }
+
+    private static void Print(Line line, bool isPrintLineNumber)
+    {
+        if (isPrintLineNumber)
+        {
+            Console.WriteLine($"{line.LineNumber}: {line.Text}");
+        }
+        else
+        {
+            Console.WriteLine($"{line.Text}");
+        }
     }
 
     public static FindOptions BuildOptions(string[] args)

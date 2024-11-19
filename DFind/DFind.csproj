@@ -13,4 +13,55 @@
         <Folder Include="Data\"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="Data\text\a-midsummer-nights-dream_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\alls-well-that-ends-well_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\antony-and-cleopatra_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\as-you-like-it_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\coriolanus_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\cymbeline_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\hamlet_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\henry-iv-part-1_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\henry-iv-part-2_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\henry-v_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\henry-vi-part-1_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\henry-vi-part-2_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\henry-vi-part-3_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\henry-viii_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\julius-caesar_TXT_FolgerShakespeare.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Data\text\mlame_mlame.ddll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
