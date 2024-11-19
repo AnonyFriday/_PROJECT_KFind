@@ -82,12 +82,13 @@ or piped from another command.
             ? StringComparison.CurrentCulture
             : StringComparison.CurrentCultureIgnoreCase;
 
-        source = new FilteredLineSource(source, line => !findOptions.IsFindDontContain
+        var lineFilter = new Func<Line, bool>(line => !findOptions.IsFindDontContain
             ? line.Text.Contains(findOptions.StringToFind, stringCaseComparision)
             : !line.Text.Contains(findOptions.StringToFind));
 
-        Console.WriteLine($"\n----------- {source.Name.ToUpper()}\n");
+        source = new FilteredLineSource(source, lineFilter);
 
+        // Process each file 
         try
         {
             // Open Source
@@ -96,10 +97,26 @@ or piped from another command.
             // Read each line
             var line = source.ReadLine();
 
-            while (line != null)
+            // If in count mode
+            if (findOptions.IsCountMode)
             {
-                Print(line, findOptions.IsShowLineNumber);
-                line = source.ReadLine();
+                var lineMatches = 0;
+                while (line != null)
+                {
+                    line = source.ReadLine();
+                    lineMatches++;
+                }
+
+                Console.WriteLine($"\n----------- {source.Name.ToUpper()}: {lineMatches}\n");
+            }
+            else
+            {
+                Console.WriteLine($"\n----------- {source.Name.ToUpper()}\n");
+                while (line != null)
+                {
+                    Print(line, findOptions.IsShowLineNumber);
+                    line = source.ReadLine();
+                }
             }
         }
         finally
